@@ -1,7 +1,7 @@
-simple
+Simple Grid
 ======
 
-A simple, semantic, fluid/responsive css framework utilizing data attributes
+A human friendly, semantic, hybrid grid framework utilizing data attributes.
 
 
 
