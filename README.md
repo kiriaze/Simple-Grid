@@ -8,8 +8,10 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
 
 1. Import grid into project, `@import 'grid';`.
 2. Import breakpoints mixin into project, `@import 'breakpoints'`;
-3. Classes are by default, .container, .row, .columns.
-4. Variable Settings
+
+### Settings
+1. Classes are by default, .container, .row, .columns.
+2. Variable Settings
 
     ```
     $container-class: 'foo';
@@ -18,30 +20,31 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
     $gutter: 3%; // spacing between columns
     $max-columns: 6; //  @for loop class declarations
     ```
-    
-5. Class Syntax
-    ```
-    .columns-{percentage, double digit}
-    .columns-70, .columns-30 = totaling to 100
-    
-    .columns-{single digit number}
-    .columns-1
-    .columns-2, .columns-2
-    .columns-4, .columns-4, .columns-4, .columns-4
-    ```
-    
-6. Gutter Classes
-	
-    ```
-    .no-gutter {
-    	@include set-gutter(0);
-    }
-    .reset-gutter {
-    	@include set-gutter($gutter);
-    }
-    ```
 
-### How to use
+### Syntax
+1. Class Syntax
+```
+.columns-{percentage, double digit}
+.columns-70, .columns-30 = totaling to 100
+
+.columns-{single digit number}
+.columns-1
+.columns-2, .columns-2
+.columns-4, .columns-4, .columns-4, .columns-4
+```
+    
+2. Gutter Classes
+	
+```
+.no-gutter {
+	@include set-gutter(0);
+}
+.reset-gutter {
+	@include set-gutter($gutter);
+}
+```
+
+### Usage
 ```
 <div class="container"> // optional
 	<div class="row"> // required
