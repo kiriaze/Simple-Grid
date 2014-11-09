@@ -5,6 +5,7 @@ A human friendly, semantic, hybrid grid framework utilizing data attributes.
 
 ### Installation
 _**If you're using either simple-framework, simple-child, or PressPlay - this is already included and handled via bower.**_
+
 1. Import grid into project, `@import 'grid';`.
 2. Import breakpoints mixin into project, `@import 'breakpoints'`;
 3. Classes are by default, .container, .row, .columns.
