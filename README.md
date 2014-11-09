@@ -13,13 +13,13 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
 1. Classes are by default, .container, .row, .columns.
 2. Variable Settings
 
-    ```
-    $container-class: 'foo';
-    $row-class: 'foo';
-    $column-class: 'bar';
-    $gutter: 3%; // spacing between columns
-    $max-columns: 6; //  @for loop class declarations
-    ```
+```
+$container-class: 'foo';
+$row-class: 'foo';
+$column-class: 'bar';
+$gutter: 3%; // spacing between columns
+$max-columns: 6; //  @for loop class declarations
+```
 
 ### Syntax
 1. Class Syntax
