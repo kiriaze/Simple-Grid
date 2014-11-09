@@ -46,14 +46,15 @@ $max-columns: 6; //  @for loop class declarations
 
 ### Usage
 ```
-<div class="container"> // optional
+<div class="container"> // optional - for fixed with breakpoints
 	<div class="row"> // required
 		<div class="columns-2"> // required
-			50% column
-    	</div>
-		<div class="columns-2">
-			50% column
-    	</div>
+        	<div class="row">  // Nesting
+				<div class="columns-2"></div>
+                <div class="columns-2"></div>
+		    </div>
+        </div>
+		<div class="columns-2"></div> // required
 	</div>
 </div>
 
@@ -64,40 +65,37 @@ $max-columns: 6; //  @for loop class declarations
 </div>
 
 # Using data attributes
-<div data-columns=".3"></div>
-<div data-columns=".7"></div>
+<div class="row">
+	<div data-columns=".3"></div>
+	<div data-columns=".7"></div>
+</div>
 
 # For equal widths
-<div class="columns-3"></div>
-<div class="columns-3"></div>
-<div class="columns-3"></div>
+<div class="row">
+	<div class="columns-3"></div>
+	<div class="columns-3"></div>
+	<div class="columns-3"></div>
+</div>
 
 # Using data attributes
-<div data-columns="3"></div>
-<div data-columns="3"></div>
-<div data-columns="3"></div>
-
-# Nesting
-<div class="columns-2">
-	<div class="row">
-		<div class="columns-2"></div>
-    </div>
-</div>
-<div class="columns-2">
-	<div class="row">
-		<div class="columns-2"></div>
-    </div>
+<div class="row">
+	<div data-columns="3"></div>
+	<div data-columns="3"></div>
+	<div data-columns="3"></div>
 </div>
 
 # Scss
 # @include container-fixed($gutter: $gutter, $padded: false);
 # @include columns($num, $display: float, $gutter: $gutter);
 # @include grid($display: float, $gutter: $gutter);
-.example-element {
-	// note: including columns within breakpoint mixin is required.
-	@include breakpoint($small) {
-    	@include columns(2);
-    }
+.example-wrapper {
+	@include grid();
+	.example-column {
+		// note: including columns within breakpoint mixin is required.
+		@include breakpoint($small) {
+    		@include columns(2);
+    	}
+	}
 }
 ```
 
