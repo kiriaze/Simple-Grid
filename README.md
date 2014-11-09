@@ -91,6 +91,7 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
 # @include columns($num, $display: float, $gutter: $gutter);
 # @include grid($display: float, $gutter: $gutter);
 .example-element {
+	// note: including columns within breakpoint mixin is required.
 	@include breakpoint($small) {
     	@include columns(2);
     }
