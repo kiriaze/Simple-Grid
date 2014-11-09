@@ -29,12 +29,12 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
     .columns-4, .columns-4, .columns-4, .columns-4
     ```
 6. Gutter Classes
-    ```
+	```
     .no-gutter {
-    @include set-gutter(0);
+    	@include set-gutter(0);
     }
     .reset-gutter {
-    @include set-gutter($gutter);
+    	@include set-gutter($gutter);
     }
     ```
 
