@@ -60,28 +60,16 @@ $max-columns: 6; //  @for loop class declarations
 
 # For mixed widths, percentage based
 <div class="row">
-	<div class="columns-30"></div>
-	<div class="columns-70"></div>
-</div>
-
-# Using data attributes
-<div class="row">
-	<div data-columns=".3"></div>
-	<div data-columns=".7"></div>
+	<div class="columns-30"></div> // default classes
+	<div class="customClass-4"></div> // custom classes
+	<div data-columns=".3"></div> // Using data attributes
 </div>
 
 # For equal widths
 <div class="row">
-	<div class="columns-3"></div>
-	<div class="columns-3"></div>
-	<div class="columns-3"></div>
-</div>
-
-# Using data attributes
-<div class="row">
-	<div data-columns="3"></div>
-	<div data-columns="3"></div>
-	<div data-columns="3"></div>
+	<div class="columns-3"></div> // default classes
+	<div class="customClass-3"></div> // custom classes
+	<div data-columns="3"></div> // Using data attributes
 </div>
 
 # Scss
