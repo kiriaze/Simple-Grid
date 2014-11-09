@@ -10,32 +10,32 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
 2. Import breakpoints mixin into project, `@import 'breakpoints'`;
 3. Classes are by default, .container, .row, .columns.
 4. Variable Settings
-```
-$container-class: 'foo';
-$row-class: 'foo';
-$column-class: 'bar';
-$gutter: 3%; // spacing between columns
-$max-columns: 6; //  @for loop class declarations
-```
+    ```
+    $container-class: 'foo';
+    $row-class: 'foo';
+    $column-class: 'bar';
+    $gutter: 3%; // spacing between columns
+    $max-columns: 6; //  @for loop class declarations
+    ```
 5. Class Syntax
-```
-.columns-{percentage, double digit}
-.columns-70, .columns-30 = totaling to 100
-
-.columns-{single digit number}
-.columns-1
-.columns-2, .columns-2
-.columns-4, .columns-4, .columns-4, .columns-4
-```
+    ```
+    .columns-{percentage, double digit}
+    .columns-70, .columns-30 = totaling to 100
+    
+    .columns-{single digit number}
+    .columns-1
+    .columns-2, .columns-2
+    .columns-4, .columns-4, .columns-4, .columns-4
+    ```
 6. Gutter Classes
-```
-.no-gutter {
-@include set-gutter(0);
-}
-.reset-gutter {
-@include set-gutter($gutter);
-}
-```
+    ```
+    .no-gutter {
+    @include set-gutter(0);
+    }
+    .reset-gutter {
+    @include set-gutter($gutter);
+    }
+    ```
 
 ### How to use
 ```
@@ -49,9 +49,7 @@ $max-columns: 6; //  @for loop class declarations
     	</div>
 	</div>
 </div>
-```
 
-```
 # For mixed widths, percentage based
 <div class="row">
 	<div class="columns-30"></div>
