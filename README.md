@@ -10,6 +10,7 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
 2. Import breakpoints mixin into project, `@import 'breakpoints'`;
 3. Classes are by default, .container, .row, .columns.
 4. Variable Settings
+
     ```
     $container-class: 'foo';
     $row-class: 'foo';
