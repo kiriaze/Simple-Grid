@@ -18,6 +18,7 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
     $gutter: 3%; // spacing between columns
     $max-columns: 6; //  @for loop class declarations
     ```
+    
 5. Class Syntax
     ```
     .columns-{percentage, double digit}
@@ -28,8 +29,10 @@ _**If you're using either simple-framework, simple-child, or PressPlay - this is
     .columns-2, .columns-2
     .columns-4, .columns-4, .columns-4, .columns-4
     ```
+    
 6. Gutter Classes
-	```
+	
+    ```
     .no-gutter {
     	@include set-gutter(0);
     }
