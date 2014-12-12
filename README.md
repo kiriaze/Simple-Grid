@@ -1,40 +1,47 @@
 Simple Grid
 ======
 
-A human friendly, semantic, hybrid grid framework utilizing data attributes.
+A human friendly, semantic, hybrid grid framework utilizing data attributes and following Simple's philosophy of SOMA.
 
 ### Installation
 _**If you're using either simple-framework, simple-child, or PressPlay - this is already included and handled via bower.**_
 
 1. Import grid into project, `@import 'grid';`.
 2. Import breakpoints mixin into project, `@import 'breakpoints'`;
+	• Note about _breakpoints.scss - First of its kind.
 
 ### Settings
 1. Classes are by default, .container, .row, .columns.
 2. Variable Settings
 
 ```
-$container-class: 'foo';
-$row-class: 'foo';
-$column-class: 'bar';
-$gutter: 3%; // spacing between columns
-$max-columns: 6; //  @for loop class declarations
+$gutter: 			3% !default;
+$docWidth: 			100% !default;
+
+// this sets your class names
+$container-class:	"container" !default; // optional
+$row-class:			"row" !default;
+$column-class:		"columns" !default;
+$max-columns:		12 !default;
+
+// Grid check
+$gridDebug:			false !default; // If true, styles grid/columns for easy visibily while testing
 ```
 
 ### Syntax
 1. Class Syntax
 ```
-.columns-{percentage, double digit}
-.columns-70, .columns-30 = totaling to 100
+.columns-{percentage, double digit} for mixed columns
+	.columns-70, .columns-30 = totaling to 100
 
-.columns-{single digit number}
-.columns-1
-.columns-2, .columns-2
-.columns-4, .columns-4, .columns-4, .columns-4
+.columns-{single digit number} for equal coloumns
+	.columns-1
+	.columns-2, .columns-2
+	.columns-4, .columns-4, .columns-4, .columns-4
 ```
-    
+
 2. Gutter Classes
-	
+
 ```
 .no-gutter {
 	@include set-gutter(0);
@@ -84,6 +91,33 @@ $max-columns: 6; //  @for loop class declarations
     		@include columns(2);
     	}
 	}
+}
+```
+
+### To Do's & Considerations
+1. Consider re implementing inline block and flex as gridTypes.
+```
+// method for %ib layout fix for spacing consider
+@font-face{
+    font-family: 'NoSpace';
+    src: url('../Fonts/zerowidthspaces.eot');
+    src: url('../Fonts/zerowidthspaces.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/zerowidthspaces.woff') format('woff'),
+         url('../Fonts/zerowidthspaces.ttf') format('truetype'),
+         url('../Fonts/zerowidthspaces.svg#NoSpace') format('svg');
+}
+
+body {
+    font-face: 'OpenSans', sans-serif;
+}
+
+.inline-container {
+    font-face: 'NoSpace';
+}
+
+.inline-container > * {
+    display: inline-block;
+    font-face: 'OpenSans', sans-serif;
 }
 ```
 
