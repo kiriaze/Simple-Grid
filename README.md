@@ -1,14 +1,15 @@
-Simple Grid
+S-Grid
 ======
 
-A human friendly, semantic, hybrid grid framework utilizing data attributes and following Simple's philosophy of SOMA.
+A human friendly, semantic, hybrid grid framework following Simple's philosophy of SOMA.
+It utilizes data attributes with fallbacks to classes and easily extendable. No bloat. Drop in friendly.
 
 ### Installation
 _**If you're using either simple-framework, simple-child, or PressPlay - this is already included and handled via bower.**_
 
 1. Import grid into project, `@import 'grid';`.
 2. Import breakpoints mixin into project, `@import 'breakpoints'`;
-	• Note about _breakpoints.scss - First of its kind.
+	* Simple's breakpoint mixin is the first of its kind - stupid simple and mobile first approach.
 
 ### Settings
 1. Classes are by default, .container, .row, .columns.
