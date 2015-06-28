@@ -4,8 +4,10 @@ S-Grid
 A human friendly, semantic, hybrid grid framework following Simple's philosophy of SOMA.
 It utilizes data attributes with fallbacks to classes and easily extendable. No bloat. Drop in friendly.
 
+
 ### Installation
-_**If you're using either simple-framework, simple-child, or PressPlay - this is already included and handled via bower.**_
+
+_**If you're using either simple-framework, simple-child, PressPlay, SFE or Espresso - this is already included and handled via bower.**_
 
 1. Import grid into project, `@import 'grid';`.
 2. Import breakpoints mixin into project, `@import 'breakpoints'`;
@@ -29,6 +31,7 @@ Classes are by default, .container, .row, .columns.
 
 
 ### Syntax
+
 1. Class Syntax
 ```
 .columns-{percentage, double digit} for mixed columns
@@ -50,6 +53,8 @@ Classes are by default, .container, .row, .columns.
 	@include set-gutter($gutter);
 }
 ```
+
+### Basic Usage
 
 	<section>
 
@@ -128,7 +133,7 @@ Classes are by default, .container, .row, .columns.
 
 ## Advanced usage
 
-By setting the $advanced-usage variable in your _base.scss, _settings.scss, or _variables.scss to 'true' you can work with Espresso more semantically.
+By setting the custom class variables for your columns and container in your _base.scss, _settings.scss, or _variables.scss you can work with Espresso more semantically.
 
 	# For mixed widths, percentage based
 
