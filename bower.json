@@ -1,0 +1,27 @@
+{
+  "name": "s-grid",
+  "version": "1.0.0",
+  "description": "Sass grid with breakpoints mixin.",
+  "authors": [
+    "Constantine Kiriaze <hello@kiriaze.com>"
+  ],
+  "main": "_grid.scss",
+  "keywords": [
+    "sass",
+    "css",
+    "grid",
+    "breakpoints"
+  ],
+  "license": "GPL",
+  "homepage": "https://github.com/kiriaze/s-grid",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+  }
+}
