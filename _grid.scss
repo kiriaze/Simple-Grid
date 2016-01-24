@@ -81,13 +81,13 @@ $gridDebug:			false !default;
 //-------------------------------------------------------
 // CLEARFIX
 //-------------------------------------------------------
-@mixin clearfix {
-	&::after {
-		clear: both;
-		content: "";
-		display: table;
-	}
-}
+// @mixin clearfix {
+// 	&::after {
+// 		clear: both;
+// 		content: "";
+// 		display: table;
+// 	}
+// }
 
 
 //-------------------------------------------------------
@@ -98,11 +98,11 @@ $gridDebug:			false !default;
 
 	@include breakpoint($small) {
 
-		margin-left: -$gutter/2;
-		margin-right: -$gutter/2;
-		padding-left: $gutter/2;
+		// margin-left: -$gutter/2;
+		// margin-right: -$gutter/2;
+		// padding-left: $gutter/2;
 
-		@include clearfix();
+		// @include clearfix();
 
 	}
 
@@ -111,7 +111,7 @@ $gridDebug:			false !default;
 // Centered container element
 @mixin container-fixed($gutter: $gutter, $padded: false) {
 	position: relative;
-    overflow: hidden;
+	overflow: hidden;
 	margin-right: auto;
 	margin-left: auto;
 
@@ -121,7 +121,7 @@ $gridDebug:			false !default;
 		padding-right: ($gutter / 2);
 	}
 
-	@include clearfix();
+	// @include clearfix();
 }
 
 @mixin grid( $display: float, $gutter: $gutter ) {
@@ -145,14 +145,18 @@ $gridDebug:			false !default;
 		}
 	} @else {
 		@include set-gutter($gutter);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
+
 }
 
 @mixin column() {
 	box-sizing: border-box;
+	width: 100%;
 	position: relative;
 	min-height: 1px;
-	width: 100%;
 }
 
 @mixin columns($num, $display: float, $gutter: $gutter) {
@@ -207,8 +211,8 @@ $gridDebug:			false !default;
 
 	} @else {
 
-		float: left;
-		margin-right: $gutter/2;
+		// float: left;
+		// margin-right: $gutter/2;
 
 		.no-gutter & {
 			margin-right: 0;
@@ -263,13 +267,13 @@ $gridDebug:			false !default;
 
 	// fluid grid, but fixed responsiveness - container fixedwidth with breakpoints
 	@include breakpoint($small) {
-		width: $small;
+		max-width: $small;
 	}
 	@include breakpoint($medium) {
-		width: $medium;
+		max-width: $medium;
 	}
 	@include breakpoint($large) {
-		width: $large;
+		max-width: $large;
 	}
 
 }
@@ -294,7 +298,7 @@ $gridDebug:			false !default;
 		margin-top: 0.5rem;
 		margin-bottom: 0.5rem;
 		font-weight: 600;
-		text-align: center;
+		// text-align: center;
 	}
 }
 
