@@ -69,6 +69,22 @@ Classes are by default, .container, .row, .columns.
 }
 ```
 
+3. Example
+# Scss
+# @include container-fixed($gutter: $gutter, $padded: false);
+# @include columns($num, $display: float, $gutter: $gutter);
+# @include grid($display: float, $gutter: $gutter);
+
+.example-wrapper {
+	@include grid();
+	.example-column {
+		// note: including columns within breakpoint mixin is required.
+		@include breakpoint($small) {
+			@include columns(2);
+		}
+	}
+}
+
 ### To Do's & Considerations
 1. Consider re implementing inline block and flex as gridTypes? Or stick to fallback to floats with Modernizr or just have the user pick which grid to implement through param.
 ```
