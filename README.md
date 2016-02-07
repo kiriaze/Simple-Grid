@@ -24,6 +24,50 @@ It utilizes data attributes with fallbacks to classes and easily extendable. No 
 
 _**If you're using either simple-child, PressPlay, SFE or Juice - this is already included and handled via bower.**_
 
+1. Import grid into project, `@import 'grid';`.
+2. Import breakpoints mixin into project, `@import 'breakpoints'`;
+	* Simple's breakpoint mixin is the first of its kind - stupid simple and mobile first approach.
+
+### Settings
+
+Classes are by default, .container, .row, .columns.
+
+	$gutter: 			3% !default;
+	$docWidth: 			100% !default;
+
+	// this sets your class names
+	$container-class:	"container" !default; // optional
+	$row-class:			"row" !default;
+	$column-class:		"columns" !default;
+	$max-columns:		12 !default;
+
+	// Grid check
+	$gridDebug:			false !default; // If true, styles grid/columns for easy visibily while testing
+
+
+### Syntax
+
+1. Class Syntax
+```
+.columns-{percentage, double digit} for mixed columns
+	.columns-70, .columns-30 = totaling to 100
+
+.columns-{single digit number} for equal coloumns
+	.columns-1
+	.columns-2, .columns-2
+	.columns-4, .columns-4, .columns-4, .columns-4
+```
+
+2. Gutter Classes
+
+```
+.no-gutter {
+	@include set-gutter(0);
+}
+.reset-gutter {
+	@include set-gutter($gutter);
+}
+```
 
 ### To Do's & Considerations
 1. Consider re implementing inline block and flex as gridTypes? Or stick to fallback to floats with Modernizr or just have the user pick which grid to implement through param.
