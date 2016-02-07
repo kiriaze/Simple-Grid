@@ -69,7 +69,9 @@ Classes are by default, .container, .row, .columns.
 }
 ```
 
-3. Example
+3. Example Usage
+
+```
 # Scss
 # @include container-fixed($gutter: $gutter, $padded: false);
 # @include columns($num, $display: float, $gutter: $gutter);
@@ -84,6 +86,7 @@ Classes are by default, .container, .row, .columns.
 		}
 	}
 }
+```
 
 ### To Do's & Considerations
 1. Consider re implementing inline block and flex as gridTypes? Or stick to fallback to floats with Modernizr or just have the user pick which grid to implement through param.
