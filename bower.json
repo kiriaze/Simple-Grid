@@ -10,7 +10,10 @@
     "sass",
     "css",
     "grid",
-    "breakpoints"
+    "breakpoints",
+    "flexbox",
+    "responsive",
+    "framework"
   ],
   "license": "GPL",
   "homepage": "https://github.com/kiriaze/s-grid",
