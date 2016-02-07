@@ -59,7 +59,6 @@ Classes are by default, .container, .row, .columns.
 ```
 
 2. Gutter Classes
-
 ```
 .no-gutter {
 	@include set-gutter(0);
@@ -69,8 +68,17 @@ Classes are by default, .container, .row, .columns.
 }
 ```
 
-3. Example Usage
+3. Default Usage https://gist.github.com/kiriaze/463b12ac9958189ae0b4
+```
+<div class="container"> // optional
+	<div class="row">
+		<div class="columns-2"></div>
+		<div class="columns-2"></div>
+	</div>
+</div>
+```
 
+4. Custom Usage
 ```
 # Scss
 # @include container-fixed($gutter: $gutter, $padded: false);
