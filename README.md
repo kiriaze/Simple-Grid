@@ -48,53 +48,53 @@ Classes are by default, .container, .row, .columns.
 ### Syntax
 
 1. Class Syntax
-```
-.columns-{percentage, double digit} for mixed columns
-	.columns-70, .columns-30 = totaling to 100
-
-.columns-{single digit number} for equal coloumns
-	.columns-1
-	.columns-2, .columns-2
-	.columns-4, .columns-4, .columns-4, .columns-4
-```
+	```
+	.columns-{percentage, double digit} for mixed columns
+		.columns-70, .columns-30 = totaling to 100
+	
+	.columns-{single digit number} for equal coloumns
+		.columns-1
+		.columns-2, .columns-2
+		.columns-4, .columns-4, .columns-4, .columns-4
+	```
 
 2. Gutter Classes
-```
-.no-gutter {
-	@include set-gutter(0);
-}
-.reset-gutter {
-	@include set-gutter($gutter);
-}
-```
+	```
+	.no-gutter {
+		@include set-gutter(0);
+	}
+	.reset-gutter {
+		@include set-gutter($gutter);
+	}
+	```
 
-3. Default Usage https://gist.github.com/kiriaze/463b12ac9958189ae0b4
-```
-<div class="container"> // optional
-	<div class="row">
-		<div class="columns-2"></div>
-		<div class="columns-2"></div>
+3. Default Usage ([Learn more](https://gist.github.com/kiriaze/463b12ac9958189ae0b4))
+	```
+	<div class="container"> // optional
+		<div class="row">
+			<div class="columns-2"></div>
+			<div class="columns-2"></div>
+		</div>
 	</div>
-</div>
-```
+	```
 
 4. Custom Usage
-```
-# Scss
-# @include container-fixed($gutter: $gutter, $padded: false);
-# @include columns($num, $display: float, $gutter: $gutter);
-# @include grid($display: float, $gutter: $gutter);
-
-.example-wrapper {
-	@include grid();
-	.example-column {
-		// note: including columns within breakpoint mixin is required.
-		@include breakpoint($small) {
-			@include columns(2);
+	```
+	# Scss
+	# @include container-fixed($gutter: $gutter, $padded: false);
+	# @include columns($num, $display: float, $gutter: $gutter);
+	# @include grid($display: float, $gutter: $gutter);
+	
+	.example-wrapper {
+		@include grid();
+		.example-column {
+			// note: including columns within breakpoint mixin is required.
+			@include breakpoint($small) {
+				@include columns(2);
+			}
 		}
 	}
-}
-```
+	```
 
 ### To Do's & Considerations
 1. Consider re implementing inline block and flex as gridTypes? Or stick to fallback to floats with Modernizr or just have the user pick which grid to implement through param.
