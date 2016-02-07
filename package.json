@@ -1,0 +1,26 @@
+{
+  "name": "s-grid",
+  "version": "1.0.2",
+  "homepage": "http://getsimple.io",
+  "author": "kiriaze <ckiriaze@gmail.com>",
+  "description": "Simple grid framework based on Flexbox",
+  "main": "_grid.scss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiriaze/s-grid.git"
+  },
+  "license": "GNU",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "bugs": {
+    "url": "https://github.com/kiriaze/s-grid/issues"
+  },
+  "devDependencies": {
+    "node-sass": "~3.4.2"
+  }
+}
