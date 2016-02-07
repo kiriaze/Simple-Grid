@@ -9,7 +9,7 @@ Try it out now:
 ```
 bower install sgrid
 # npm coming soon
-npm install sgrid
+# npm install sgrid
 ```
 
 Feel free to raise an issue or submit a pull request. In the meantime, look below for usage & examples, or check the post about it at [kiriaze.com/labs/grid/](http://kiriaze.com/labs/grid/).
