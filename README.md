@@ -8,11 +8,7 @@ Try it out now:
 
 ```npm install sgrid```
 
-Feel free to raise an issue or submit a pull request. In the meantime, check the [documentation](https://gist.github.com/kiriaze/463b12ac9958189ae0b4).
-
-## Copyright and license
-
-Code copyright 2014 Constantine Kiriaze. Code released under [the GNU public license](https://github.com/kiriaze/s-grid/blob/master/LICENSE).
+Feel free to raise an issue or submit a pull request. In the meantime, look below for usage & examples, or check the post about it at [kiriaze.com/labs/grid/](http://kiriaze.com/labs/grid/).
 
 ---
 
@@ -123,5 +119,5 @@ body {
 }
 ```
 
-### License
-Simple Grid is licensed under the GPL v2 license. (http://opensource.org/licenses/GPL-2.0)
+### Copyright and license
+Code copyright 2014 Constantine Kiriaze. Simple Grid is licensed under the GPL v2 license. (http://opensource.org/licenses/GPL-2.0)
