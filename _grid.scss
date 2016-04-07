@@ -492,8 +492,8 @@ $gridDebug:			false !default;
 
 		// if whole number for even # cols
 		$colWidth: column-width($num, $docWidth);
-		@if ( $num != 1 ) {
-			width: calc(#{$colWidth} - ( #{$gutter} / 2 ) );
+		@if ( $num != 1 and $gutter != 0 ) {
+			width: calc( #{$colWidth} - ( #{$gutter} / 2 ) );
 		} @else {
 			width: column-width($num, $docWidth);
 		}
@@ -504,9 +504,9 @@ $gridDebug:			false !default;
 
 	} @else {
 
-		@if ( $num != 1 ) {
-			// for mixed width cols, data-columns=".3"
-			width: calc(($num * $docWidth) - #{$gutter} / 2);
+		@if ( $num != 1 and $gutter != 0 ) {
+			// for mixed width cols, data-columns=".3", columns(.3)
+			width: calc( ( #{$num} * #{$docWidth} ) - ( #{$gutter} / 2 ) );
 		} @else {
 			width: ($num * $docWidth);
 		}
