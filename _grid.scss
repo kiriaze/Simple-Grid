@@ -96,19 +96,11 @@ $gridDebug:			false !default;
 
 @mixin set-gutter($gutter) {
 
-	@include breakpoint($small) {
+	margin-left: -$gutter;
+	margin-right: -$gutter;
+	padding-left: $gutter;
 
-		// margin-left: -$gutter/2;
-		// margin-right: -$gutter/2;
-		// padding-left: $gutter/2;
-
-		margin-left: -$gutter;
-		margin-right: -$gutter;
-		padding-left: $gutter;
-
-		@include clearfix();
-
-	}
+	@include clearfix();
 
 }
 
@@ -121,9 +113,6 @@ $gridDebug:			false !default;
 
 	// so edges always have space
 	@if ( $padded == true ) {
-		// padding-left:  ($gutter / 2);
-		// padding-right: ($gutter / 2);
-
 		padding-left:  ($gutter);
 		padding-right: ($gutter);
 	}
@@ -145,9 +134,6 @@ $gridDebug:			false !default;
 		}
 	} @else {
 		@include set-gutter($gutter);
-		// display: flex;
-		// flex-wrap: wrap;
-		// justify-content: space-between;
 	}
 
 }
@@ -170,8 +156,8 @@ $gridDebug:			false !default;
 
 		// if whole number for even # cols
 		$colWidth: column-width($num, $docWidth);
-		@if ( $num != 1 and $gutter != 0 ) {
-			// width: calc( #{$colWidth} - ( #{$gutter} / 2 ) );
+
+		@if ( $gutter != 0 ) {
 			width: calc( #{$colWidth} - ( #{$gutter} ) );
 		} @else {
 			width: column-width($num, $docWidth);
@@ -183,9 +169,8 @@ $gridDebug:			false !default;
 
 	} @else {
 
-		@if ( $num != 1 and $gutter != 0 ) {
+		@if ( $gutter != 0 ) {
 			// for mixed width cols, data-columns=".3", columns(.3)
-			// width: calc( ( #{$num} * #{$docWidth} ) - ( #{$gutter} / 2 ) );
 			width: calc( ( #{$num} * #{$docWidth} ) - ( #{$gutter} ) );
 		} @else {
 			width: ($num * $docWidth);
@@ -208,7 +193,6 @@ $gridDebug:			false !default;
 	} @else {
 
 		float: left;
-		// margin-right: $gutter/2;
 		margin-right: $gutter;
 
 		.no-gutter & {
@@ -220,42 +204,50 @@ $gridDebug:			false !default;
 }
 
 @mixin third($num) {
-	@include column();
-	@include breakpoint($small) {
-		float: left;
-		width: third-width($num, $docWidth);
-	}
+	float: left;
+	width: third-width($num, $docWidth);
 }
 
 // set the proportions you want to use
 @mixin grid-setup() {
 
 	@for $i from 1 through $max-columns {
+
 		[data-columns='#{$i}'],
 		.#{$column-class}-#{$i} {
-			@include column();
-			@include breakpoint($small) {
-				@include columns($i);
-			}
+			@include columns($i);
 		}
+
+		// offsets
+		[data-offset-columns='#{$i}'],
+		.offset-#{$column-class}-#{$i} {
+			margin-left: column-width($i, $docWidth);
+		}
+
 	}
 
 	// Percentages for mixed widths
 	@for $i from 1 through 10 {
+
 		[data-columns='.#{$i}'],
 		.#{$column-class}-#{$i}0 {
-			@include column();
-			@include breakpoint($small) {
-				@include columns($i/10);
-			}
+			@include columns($i/10);
 		}
-		[data-columns='.#{$i}'],
+		[data-columns='.#{$i}5'],
 		.#{$column-class}-#{$i}5 {
-			@include column();
-			@include breakpoint($small) {
-				@include columns((($i*10)+5)/100);
-			}
+			@include columns((($i*10)+5)/100);
 		}
+
+		// offsets
+		[data-offset-columns='.#{$i}'],
+		.offset-#{$column-class}-#{$i} {
+			margin-left: column-width($i, $docWidth);
+		}
+		[data-offset-columns='.#{$i}5'],
+		.offset-#{$column-class}-#{$i}5 {
+			margin-left: column-width((($i*10)+5)/100, $docWidth);
+		}
+
 	}
 
 }
@@ -267,20 +259,7 @@ $gridDebug:			false !default;
 
 [class~='#{$container-class}'],
 [data-layout='container'] {
-
 	@include container-fixed();
-
-	// fluid grid, but fixed responsiveness - container fixedwidth with breakpoints
-	@include breakpoint($small) {
-		max-width: $small;
-	}
-	@include breakpoint($medium) {
-		max-width: $medium;
-	}
-	@include breakpoint($large) {
-		max-width: $large;
-	}
-
 }
 
 [class~='#{$row-class}'],
