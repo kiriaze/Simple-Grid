@@ -1,6 +1,6 @@
 {
   "name": "s-grid",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "http://getsimple.io",
   "author": "kiriaze <ckiriaze@gmail.com>",
   "description": "Simple grid framework based on Flexbox",
