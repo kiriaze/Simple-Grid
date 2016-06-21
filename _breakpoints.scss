@@ -1,18 +1,44 @@
 /************************
 BREAKPOINTS - getsimple.io
 ************************/
-@mixin breakpoint($minWidth, $maxWidth: null, $orientation: null) {
-	@if ( $minWidth ) {
-		@media ( min-width: $minWidth ) {
-			@content;
-		}
-	}
-	@if ( $minWidth and $maxWidth ) {
-		@media ( min-width: $minWidth ) and ( max-width: $maxWidth ) {
-			@content;
-		}
-	}
+@mixin breakpoint($point, $direction: 'up') {
+
+    $value: $point;
+
+    @if($direction == 'up'){
+
+        @media ( min-width: $value + 1px) {
+            @content;
+        }
+
+    }
+    @else if($direction == 'down'){
+
+        @media ( min-width: $value - 1px) {
+            @content;
+        }
+
+    }
+    @else {
+
+        @media ( min-width: $point ) {
+            @content;
+        }
+    }
 }
+
+// @mixin breakpoint($minWidth, $maxWidth: null, $orientation: null) {
+// 	@if ( $minWidth ) {
+// 		@media ( min-width: $minWidth ) {
+// 			@content;
+// 		}
+// 	}
+// 	@if ( $minWidth and $maxWidth ) {
+// 		@media ( min-width: $minWidth ) and ( max-width: $maxWidth ) {
+// 			@content;
+// 		}
+// 	}
+// }
 // Example usage:
 //
 // @include breakpoint($large) {
