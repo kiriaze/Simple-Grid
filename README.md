@@ -100,6 +100,7 @@ Classes are by default, .container, .row, .columns.
 1. Consider re implementing inline block and flex as gridTypes? Or stick to fallback to floats with Modernizr or just have the user pick which grid to implement through param.
 ```
 // method for %ib layout fix for spacing consider
+
 @font-face{
     font-family: 'NoSpace';
     src: url('../Fonts/zerowidthspaces.eot');
